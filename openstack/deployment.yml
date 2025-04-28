@@ -1,0 +1,29 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  name: fullstack
+spec:
+  replicas: 1
+  selector:
+    app: fullstack
+  template:
+    metadata:
+      labels:
+        app: fullstack
+    spec:
+      containers:
+        - name: fullstack
+          image: ''
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+  triggers:
+    - type: ConfigChange
+    - type: ImageChange
+      imageChangeParams:
+        automatic: true
+        containerNames:
+          - fullstack
+        from:
+          kind: ImageStreamTag
+          name: fullstack:latest

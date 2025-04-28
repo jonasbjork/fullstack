@@ -1,0 +1,9 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: fullstack
+spec:
+  to:
+    kind: Service
+    name: fullstack
+  

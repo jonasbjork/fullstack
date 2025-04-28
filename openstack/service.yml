@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fullstack
+spec:
+  selector:
+    app: fullstack
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
