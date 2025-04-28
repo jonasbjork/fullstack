@@ -36,18 +36,18 @@ jobs:
       run: |
         docker build -t fullstack:latest .
   
-#    - name: Log in to GitHub Container Registry
-#      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+    - name: Log in to GitHub Container Registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-#    - name: Tag the container image
-#      run: |
-#        docker tag fullstack:latest ghcr.io/${{ github.actor }}/fullstack:latest
-#        docker tag fullstack:latest ghcr.io/${{ github.actor }}/fullstack:${{ github.sha }}
+    - name: Tag the container image
+      run: |
+        docker tag fullstack:latest ghcr.io/${{ github.actor }}/fullstack:latest
+        docker tag fullstack:latest ghcr.io/${{ github.actor }}/fullstack:${{ github.sha }}
     
-#    - name: Push the container image
-#      run: |
-#        docker push ghcr.io/${{ github.actor }}/fullstack:latest
-#        docker push ghcr.io/${{ github.actor }}/fullstack:${{ github.sha }}
+    - name: Push the container image
+      run: |
+        docker push ghcr.io/${{ github.actor }}/fullstack:latest
+        docker push ghcr.io/${{ github.actor }}/fullstack:${{ github.sha }}
     
 #    - name: Installera OpenShift CLI
 #      run: |
