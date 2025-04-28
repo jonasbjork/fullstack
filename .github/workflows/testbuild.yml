@@ -49,14 +49,14 @@ jobs:
         docker push ghcr.io/${{ github.actor }}/fullstack:latest
         docker push ghcr.io/${{ github.actor }}/fullstack:${{ github.sha }}
     
-#    - name: Installera OpenShift CLI
-#      run: |
-#        curl -LO "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/openshift-client-linux.tar.gz"
-#        tar -xvf openshift-client-linux.tar.gz
-#        sudo mv oc kubectl /usr/local/bin/
+    - name: Installera OpenShift CLI
+      run: |
+        curl -LO "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/openshift-client-linux.tar.gz"
+        tar -xvf openshift-client-linux.tar.gz
+        sudo mv oc kubectl /usr/local/bin/
 
-#    - name: OpenShift pull new image
-#      run: |
-#        oc login --token=${{ secrets.OCP_FULLSTACK_TOKEN }} --server=${{ secrets.OCP_FULLSTACK_SERVER }} --insecure-skip-tls-verify=true
-#        oc project test
-#        oc import-image fullstack:latest --confirm
+    - name: OpenShift pull new image
+      run: |
+        oc login --token=${{ secrets.OCP_FULLSTACK_TOKEN }} --server=${{ secrets.OCP_FULLSTACK_SERVER }} --insecure-skip-tls-verify=true
+        oc project test
+        oc import-image fullstack:latest --confirm
