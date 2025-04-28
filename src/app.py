@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 
 
 def summa(a, b):
-    return a + b
+    return a + b + 1
 
 
 def differens(a, b):
