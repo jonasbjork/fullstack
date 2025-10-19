@@ -3,7 +3,7 @@ from app import app, summa, differens
 
 # Testa funktionerna
 def test_summa():
-    assert summa(3, 4) == 71
+    assert summa(3, 4) == 7
     assert summa(-1, 1) == 0
     assert summa(0, 0) == 0
 
