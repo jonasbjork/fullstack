@@ -66,5 +66,5 @@ jobs:
     - name: OpenShift pull new image
       run: |
         oc login --token=${{ secrets.OCP_FULLSTACK_TOKEN }} --server=${{ secrets.OCP_FULLSTACK_SERVER }} --insecure-skip-tls-verify=true
-        oc project test
+        oc project ${{ secrets.OCP_FULLSTACK_PROJECT }}
         oc import-image fullstack:latest --confirm
