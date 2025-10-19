@@ -30,11 +30,13 @@ def get_numbers():
 
 @app.route('/summa')
 def add():
-    result = get_numbers()
+		result = get_numbers()
     if isinstance(result, tuple):
         a, b = result
         return jsonify(result=summa(a, b))
     return result
+
+
 
 
 @app.route('/differens')
