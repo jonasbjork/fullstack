@@ -6,7 +6,7 @@ COPY src/requirements.txt .
 RUN pip install -r requirements.txt && rm requirements.txt
 COPY src/app.py .
 
-ENV NAMN="jonas"
+ENV NAMN="kalle"
 EXPOSE 8080
 
 CMD ["python", "app.py"]
