@@ -7,8 +7,6 @@ def summa(a, b):
     return a + b
 
 
-
-
 def differens(a, b):
     return a - b
 
